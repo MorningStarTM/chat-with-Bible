@@ -1,1 +1,1 @@
-# chat-with-pdf-v1
+# chat-with-Bible
