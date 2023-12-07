@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Question Answering App</title>
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.answer {
+    margin-top: 20px;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <h1>Chat with Bible</h1>
+        <form method="post">
+            <label for="question">Enter your question:</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Search</button>
+        </form>
+        <div class="answer">
+            <strong>Queation:</strong> {{ question }}
+        </div>
+        {% if answer %}
+            <div class="answer">
+                <strong>Answer:</strong> {{ answer }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
